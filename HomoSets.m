@@ -1,9 +1,10 @@
-function [ HomoSetsALL ] = HomoSetsNew( Adj,HGThresh,minCN,maxCN )
+function [ HomoSetsALL ] = HomoSets( Adj,HGThresh,minCN,maxCN )
 %HOMOSETS Take as an input a NxN directed adjecancy matrix and the pvalue
 %threshold of the hypergeometric test (the smaller it is, the greater the
 %homogeneity of the output sets). The input should contain the range of common neighbors to the output sets.
 %The output is a cell array that contains in every row:
 % [X neuron] [Y neuron] [Z neurons] [Triad type of Z neurons] [Set type]
+% for example: Sets = HomoSets(Adj,0.05,5,99)
 n=length(Adj);
 Adj(Adj<1) = 0;
 Adj=Adj-eye(n);
