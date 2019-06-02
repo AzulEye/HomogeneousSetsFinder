@@ -51,7 +51,7 @@ for i=1:n
     end
     i
 end
-save('CommoneighborMat50.mat','CommoneighborMat','-v7.3');
+%save('CommoneighborMat50.mat','CommoneighborMat','-v7.3');
 for i=1:n
     for j=1:n
         if (i<j && CommoneighborMat(i,j) >= minCN && CommoneighborMat(i,j) <= maxCN  && (Adj(i,j) || Adj(j,i)))
@@ -60,7 +60,7 @@ for i=1:n
     end
     i
 end
-save('PairsWith50PlusCN_BlueBrain.mat','tens','-v7.3');
+%save('PairsWith50PlusCN_BlueBrain.mat','tens','-v7.3');
 
 %% HYPERGEOMETRIC TEST
 HomoSetsALL=[];
@@ -320,6 +320,6 @@ for i=1:length(Slices)-1
         
     end
     HomoSetsALL=[HomoSetsALL; HomoSets];
-    save('HomoSetsALL50.mat','HomoSetsALL');
+    save('HomoSets.mat','HomoSetsALL');
 end
 end
